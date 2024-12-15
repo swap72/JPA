@@ -8,18 +8,10 @@ import javax.persistence.Id;
 @Entity
 public class IDCard {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	private String house;
-	private char section;
-	
-	public IDCard(){
-		
-	}
-	@Override
-	public String toString() {
-		return "IDCard [id=" + id + ", house=" + house + ", section=" + section + "]";
-	}
+	private long number;
 	public int getId() {
 		return id;
 	}
@@ -32,11 +24,25 @@ public class IDCard {
 	public void setHouse(String house) {
 		this.house = house;
 	}
-	public char getSection() {
-		return section;
+	public long getNumber() {
+		return number;
 	}
-	public void setSection(char section) {
-		this.section = section;
+	public void setNumber(long number) {
+		this.number = number;
+	}
+	public IDCard(int id, String house, long number) {
+		super();
+		this.id = id;
+		this.house = house;
+		this.number = number;
+	}
+	public IDCard() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	@Override
+	public String toString() {
+		return "IDCard [id=" + id + ", house=" + house + ", number=" + number + "]";
 	}
 	
 }
